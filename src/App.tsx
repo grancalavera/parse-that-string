@@ -1,11 +1,9 @@
 import { Typography } from "@mui/material";
-import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import { bind, Subscribe } from "@react-rxjs/core";
 import { createSignal } from "@react-rxjs/utils";
 import { map } from "rxjs/internal/operators/map";
-import { CenterLayout } from "./layout/center-layout";
-import { FullPageLayout } from "./layout/full-page-layout";
+import { Layout } from "./layout/layout";
 
 const [words$, setWords] = createSignal<string>();
 const [useWords] = bind(words$, "");
@@ -25,22 +23,18 @@ export function App() {
   const words = useWords();
 
   return (
-    <FullPageLayout>
-      <CenterLayout>
-        <Stack>
-          <TextField
-            label="Type a number in words..."
-            value={words}
-            onChange={(e) => setWords(e.target.value)}
-          />
-          <Typography variant="h1" align="center">
-            <Subscribe fallback={"..."}>
-              <TheNumber />
-            </Subscribe>
-          </Typography>
-        </Stack>
-      </CenterLayout>
-    </FullPageLayout>
+    <Layout>
+      <TextField
+        label="Type a number in words..."
+        value={words}
+        onChange={(e) => setWords(e.target.value)}
+      />
+      <Typography variant="h6" align="center">
+        <Subscribe fallback={"👆 type something!"}>
+          <TheNumber />
+        </Subscribe>
+      </Typography>
+    </Layout>
   );
 }
 const TheNumber = () => {
