@@ -1,8 +1,8 @@
-import { Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 import { bind, Subscribe } from "@react-rxjs/core";
 import { createSignal } from "@react-rxjs/utils";
-import { map } from "rxjs/internal/operators/map";
+import { map } from "rxjs";
 import { Layout } from "./layout/layout";
 
 const [words$, setWords] = createSignal<string>();
