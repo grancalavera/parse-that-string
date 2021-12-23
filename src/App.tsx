@@ -37,6 +37,7 @@ export function App() {
     </Layout>
   );
 }
+
 const TheNumber = () => {
   const theNumber = useTheNumber();
   return <>{theNumber === undefined ? "..." : isNaN(theNumber) ? "💥" : theNumber}</>;
