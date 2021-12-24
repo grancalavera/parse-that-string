@@ -9,6 +9,8 @@
     "@mui/material": "5.2.5",
     "@react-rxjs/core": "0.8.4",
     "@react-rxjs/utils": "0.9.3",
+    "@swc/core": "1.2.122",
+    "@swc/helpers": "0.3.2",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "13.5.0",
@@ -16,15 +18,19 @@
     "@types/node": "16.11.17",
     "@types/react": "17.0.38",
     "@types/react-dom": "17.0.11",
+    "nodemon": "2.0.15",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-scripts": "5.0.0",
+    "regenerator-runtime": "0.13.9",
     "rxjs": "7.4.0",
+    "ts-node": "10.4.0",
     "typescript": "4.5.4",
     "web-vitals": "2.1.2"
   },
   "scripts": {
     "start": "BROWSER=none react-scripts start",
+    "sketch": "nodemon --config nodemon.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
